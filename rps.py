@@ -2,6 +2,11 @@ import sys
 import random
 from enum import Enum
 
+#variables to track game statistics
+game_count = 0
+computer_wins = 0
+ties = 0
+
 def play_rps():
 
     class RPS(Enum):
@@ -11,7 +16,7 @@ def play_rps():
         SCISSORS = 3
 
     #get player choice
-    player = int(input("Enter...\n1 for Rock\n2 for Paper, or\n3 for Scissors\n\n"))
+    player = int(input("\nEnter...\n1 for Rock\n2 for Paper, or\n3 for Scissors\n\n"))
 
     #player can only choose from 1, 2 or 3 - if not, exit
     if player not in [1, 2, 3]:
@@ -27,27 +32,48 @@ def play_rps():
     print("")
 
     #logic for determining winner
-    if player == 1 and computer == 3:
-        print("You win 🎉")
-    elif player == 2 and computer == 1:
-        print("You win 🎉")
-    elif player == 3 and computer == 2:
-        print("You win 🎉")
-    elif player == computer:
-        print("It's a tie")
-    else:
-        print("Computer wins") 
-    print("")
+    #tracks number of times computer wins, game is tied
+    def decide_winner(player, computer):
+        if player == 1 and computer == 3:
+            return("You win 🎉")
+        elif player == 2 and computer == 1:
+            return("You win 🎉")
+        elif player == 3 and computer == 2:
+            return("You win 🎉")
+        elif player == computer:
+            global ties
+            ties += 1
+            return("It's a tie")
+        else:
+            global computer_wins
+            computer_wins += 1
+            return("Computer wins 😪") 
+        
+    #play game and print results
+    game_result = decide_winner(player, computer)
+    print(game_result)
+
+    global game_count
+    game_count += 1
+
+    print("Game count: " + str(game_count))
+    print("Player wins: " + str(game_count - computer_wins - ties))
+    print("Computer wins: " + str(computer_wins))
+    print("Ties: " + str(ties))
 
     #ask player to play again or quit
-    play_again = input("Play again?\nY for Yes or \nQ to Quit \n\n")
+    while True:
+        play_again = input("\nPlay again?\nY for Yes or \nQ to Quit \n\n")
+        if play_again.lower() not in ["y", "q"]:
+            continue
+        else:
+            break
 
     if play_again.lower() == 'y':
-        play_rps()
+            return play_rps()
     else:
-        print("Thanks for playing!")
-        play_again = False
-        sys.exit()
+            print("Thanks for playing!")
+            sys.exit()
 
 play_rps()
 
