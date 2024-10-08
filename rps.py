@@ -16,12 +16,16 @@ def play_rps():
         SCISSORS = 3
 
     #get player choice
-    player = int(input("\nEnter...\n1 for Rock\n2 for Paper, or\n3 for Scissors\n\n"))
+    while True:
+        player = input("\nEnter...\n1 for Rock\n2 for Paper, or\n3 for Scissors\n\n")
+        #player can only choose from 1, 2 or 3 - if not, ask again
+        if player not in ["1", "2", "3"]:
+             print("\nYou must enter 1, 2 or 3")
+             continue
+        else:
+             player = int(player)
+             break
 
-    #player can only choose from 1, 2 or 3 - if not, exit
-    if player not in [1, 2, 3]:
-        print("\nYou must enter 1, 2, or 3")
-        return play_rps()
 
     #get computer choice
     computer = int(random.choice("123"))
