@@ -9,7 +9,11 @@ Game updates are as follows:
  
 2 - The same basic game, with the option to continue playing after each game.
 
-3 - Added game statistics tracking: game count, player wins, computer wins, ties.
+3 - Game tracks and displays statistics: game count, player wins, computer wins, ties.
 
-4 - User input handling improved, game loops asking for correct input rather than exiting or crashing.
+4 - User input handling is improved, game loops asking for correct input rather than exiting or crashing.
+
+5 - Game is now the module rock_paper_scissors.
+
+6 - Game takes the player's name as an argument and uses it to personalise the game play.
 
