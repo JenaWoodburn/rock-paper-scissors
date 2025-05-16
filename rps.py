@@ -63,10 +63,10 @@ def rps():
         nonlocal game_count
         game_count += 1
 
-        print("Game count: " + str(game_count))
-        print("Player wins: " + str(game_count - computer_wins - ties))
-        print("Computer wins: " + str(computer_wins))
-        print("Ties: " + str(ties))
+        print(f"Game count:  {game_count}")
+        print(f"Player wins: {game_count - computer_wins - ties}")
+        print(f"Computer wins: {computer_wins}")
+        print(f"Ties: {ties}")
 
         #ask player to play again or quit
         while True:
