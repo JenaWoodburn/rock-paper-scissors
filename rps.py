@@ -50,7 +50,7 @@ def rps():
             elif player == computer:
                 nonlocal ties
                 ties += 1
-                return("It's a tie")
+                return("It's a tie 👔")
             else:
                 nonlocal computer_wins
                 computer_wins += 1
@@ -83,7 +83,9 @@ def rps():
                 sys.exit()
     return play_rps
 
-play = rps()
+rock_paper_scissors = rps()
 
-play()
+
+if __name__ == '__main__':
+    rock_paper_scissors()
 
