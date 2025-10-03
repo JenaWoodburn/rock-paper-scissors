@@ -16,9 +16,9 @@ Specify your player name.
 
 #### Examples
 ```
-python game.py -n Alice
-python game.py --name Bob
-python game.py -h
+python rps.py -n Alice
+python rps.py --name Bob
+python rps.py -h
 ```
 
 
