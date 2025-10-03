@@ -1,4 +1,29 @@
-rps.py is a Rock Paper Scissors game. Each iteration of the game increases in complexity. 
+rps.py is a Rock Paper Scissors game. 
+
+How to Play
+
+Run the game from the command line:
+
+python game.py [-h] [-n NAME]
+
+Options
+
+-h, --help
+Show the help message and exit.
+
+-n NAME, --name NAME
+Specify your player name.
+
+Examples
+python game.py -n Alice
+python game.py --name Bob
+python game.py -h
+
+
+
+Commit history:
+
+Each iteration of the game increases in complexity. 
 
 The iterations of the game are taken from Dave Gray's tutorial https://www.youtube.com/watch?v=H2EJuAcrZYU&amp;t=17794s
 
@@ -16,4 +41,4 @@ Game updates are as follows:
 5 - Game is now the module rock_paper_scissors.
 
 6 - Game takes the player's name as an argument and uses it to personalise the game play.
-
+ 
