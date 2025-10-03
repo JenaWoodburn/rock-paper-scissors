@@ -4,7 +4,7 @@ rps.py is a **Rock Paper Scissors** game.
 
 Run the game from the command line:
 
-`python game.py [-h] [-n NAME]`
+`python rps.py [-h] [-n NAME]`
 
 #### Options
 
